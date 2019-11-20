@@ -1,5 +1,5 @@
-#ifndef KEYCODES_H_
-#define KEYCODES_H_
+#ifndef KEYCODES_H
+#define KEYCODES_H
 constexpr int WAITKEY_CURSORKEY_RIGHT = 83;
 constexpr int WAITKEY_CURSORKEY_LEFT = 81;
 
