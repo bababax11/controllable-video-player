@@ -10,6 +10,8 @@ int main(int argc, char const *argv[])
     // cv::namedWindow("Playing", cv::WINDOW_AUTOSIZE);
     
     cv::VideoCapture cap(argv[1]);
+    const int len_frames = int(cap.get(cv::CAP_PROP_FRAME_COUNT));
+    int frame_n = len_frames;
     while(cap.read(frame)) {
         cv::imshow("Playing", frame);
         const int key = cv::waitKey(1);
@@ -17,6 +19,8 @@ int main(int argc, char const *argv[])
         {
             break;//whileループから抜ける．
         }
+        frame_n -=1;
+        cap.set(cv::CAP_PROP_POS_FRAMES, frame_n);
     }
     cv::destroyAllWindows();
     return 0;
